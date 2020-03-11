@@ -2,9 +2,9 @@ This repository contains mostly data science-related assignment solutions, in th
 
 ### Table of folder contents
 
-[OLS](https://github.com/yflim/data-science-work-samples/tree/master/OLS)
+[OLS and GLM](https://github.com/yflim/data-science-work-samples/tree/master/OLS_and_GLM)
 - OLS solution from scratch using gradient descent, with comparison against ready-made solution from statsmodels.
-- Some related theory.
+- Some related theory; also for GLM.
 
 [Logistic regression](https://github.com/yflim/data-science-work-samples/tree/master/logistic_regression)
 - Parameter MLE from scratch for logistic regression using the Newton-Raphson method, plus out-of-the-box Scikit-learn solution.
