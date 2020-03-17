@@ -31,7 +31,7 @@ def get_comparator(var):
 
 # Binary decision tree
 class DecisionTree():
-    def __init__(self, x, y, max_features=None, max_depth=None, min_samples=2):
+    def __init__(self, x, y, max_features=None, max_depth=None, min_samples=None):
         """
         Constructor for classification / regression Decision Tree
         :param x: (DataFrame) Training feature data
@@ -47,7 +47,7 @@ class DecisionTree():
         self.is_classifier = not(is_numeric(self.data.dependent, False))
         self.max_features = max_features
         self.max_depth = max_depth or (self.max_features and (2 * self.max_features))
-        self.min_samples = min_samples
+        self.min_samples = min_samples or max(1, round(0.001 * len(self.data)))
         self.tree_dict = {}
 
     def _is_pure(self, obs_index):
