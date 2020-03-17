@@ -86,6 +86,13 @@ class DecisionTree():
         index_above = data.index.difference(index_below)
         return index_below, index_above
 
+    def _get_classification_error_rate(self, obs_index):
+        """"
+        :param obs_index: (Index) DataFrame indices of observations to be considered
+        :returns: (float) Error rate
+        """
+        return (self._assign_leaf_val(obs_index) != self.data.dependent[obs_index]).sum() / len(obs_index)
+
     def _get_entropy(self, obs_index):
         """"
         Calculates entropy of a set of data
