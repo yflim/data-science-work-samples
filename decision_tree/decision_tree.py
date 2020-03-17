@@ -83,14 +83,14 @@ class DecisionTree():
             cols = cols[column_indices]
         return { feature: np.unique(x[feature]) for feature in cols }
 
-    def _split_data(self, split_column, split_value):
+    def _split_data(self, obs_index, split_column, split_value):
         """
         Splits the data
         :param split_column: Column to split the data on
         :param split_value: Value to split on
         :return index_below, index_above: (Index, Index) DataFrame indices of observations in each partition
         """
-        data, op = self.data, self.feature_comparators[split_column]
+        data, op = self.data.loc[obs_index], self.feature_comparators[split_column]
         index_below = data[op(data[split_column], split_value)].index
         index_above = data.index.difference(index_below)
         return index_below, index_above
@@ -145,7 +145,7 @@ class DecisionTree():
             return self._get_split_entropy(index_below, index_above)
         return self._get_split_rss(index_below, index_above)
 
-    def _determine_best_split(self, potential_splits):
+    def _determine_best_split(self, obs_index, potential_splits):
         """
         Determines the best split out of the potential splits via an exhaustive search
         :param potential_splits: (dict) Potential splits to consider
@@ -154,13 +154,45 @@ class DecisionTree():
         best_split_cost = np.inf
         for feature in potential_splits.keys():
             for value in potential_splits[feature]:
-                index_below, index_above = self._split_data(feature, value)
+                index_below, index_above = self._split_data(obs_index, feature, value)
                 current_split_cost = self._get_split_cost(index_below, index_above)
                 if current_split_cost <= best_split_cost:
                     best_split_cost = current_split_cost
                     best_split_column = feature
                     best_split_value = value
         return best_split_column, best_split_value
+
+    def _grow(self, obs_index, counter=0, branches_must_differ=False):
+        """
+        Adds a branch to decision tree dictionary (self.tree_dict)
+        :param obs_index: absolute indices of observations to be considered
+        :param counter: (int) Current depth of branch
+        """
+        data = self.data.loc[obs_index]
+        if (counter == self.max_depth) or (self.is_classifier and self._is_pure(obs_index)):
+            return (self._assign_leaf_val(obs_index), obs_index)
+        else:
+            counter += 1
+            potential_splits = self._get_potential_splits(obs_index)
+            split_column, split_value = self._determine_best_split(obs_index, potential_splits)
+            index_below, index_above = self._split_data(obs_index, split_column, split_value)
+            if len(index_below) < self.min_samples or len(index_above) < self.min_samples:
+                return (self._assign_leaf_val(obs_index), obs_index)
+            yes_answer = self._grow(index_below, counter=counter)
+            no_answer = self._grow(index_above, counter=counter)
+            # In a random forest tree, if the answers are the same, then there is no point in asking the question.
+            # This could happen when the data is classified even though it is not pure yet.
+            if branches_must_differ and (not isinstance(yes_answer, dict)) and (not isinstance(no_answer, dict)):
+                if (yes_answer[0] == no_answer[0]):
+                    return (yes_answer[0], obs_index)
+            return { (split_column, split_value): [yes_answer, no_answer] }
+
+    def fit(self, branches_must_differ=False):
+        """
+        Fits a decision tree to the data used
+        :param branches_must_differ: (bool) Stop splitting if child branches share predicted value
+        """
+        self.tree_dict = self._grow(self.data.index, 0, branches_must_differ)
 
     def predict_observation(self, observation, tree):
         """
