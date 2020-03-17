@@ -4,18 +4,8 @@ import numpy as np
 import pandas as pd
 import operator
 import random
+import utils
 
-
-# TODO: ***COST COMPLEXITY PRUNING***
-
-def is_numeric(var, int_as_numeric=True):
-    """
-    Determines whether variable is numeric
-    :param var: Obesrvations of single variable
-    :type var: Union[array, Series]
-    :return: (bool) Is variable numeric?
-    """
-    return (int_as_numeric and (var.dtype.kind in np.typecodes["AllInteger"])) or (var.dtype.kind in np.typecodes["AllFloat"])
 
 def get_comparator(var):
     """
@@ -24,10 +14,9 @@ def get_comparator(var):
     :type var: Union[array, Series]
     :return: (builtin_function_or_method) Python operator
     """
-    if is_numeric(var):
+    if utils.is_numeric(var):
         return operator.le
     return operator.eq
-
 
 # Binary decision tree
 class DecisionTree():
@@ -44,7 +33,7 @@ class DecisionTree():
         self.data = x
         self.feature_comparators = self.data.apply(lambda feature: get_comparator(feature))
         self.data['dependent'] = y
-        self.is_classifier = not(is_numeric(self.data.dependent, False))
+        self.is_classifier = not(utils.is_numeric(self.data.dependent, False))
         self.max_features = max_features
         self.max_depth = max_depth or (self.max_features and (2 * self.max_features))
         self.min_samples = min_samples or max(1, round(0.001 * len(self.data)))
