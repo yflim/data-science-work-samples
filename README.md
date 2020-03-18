@@ -13,8 +13,10 @@ This repository contains mostly data science-related assignment solutions, in th
 - Leave-one-out and k-fold cross-validation methods for classification, efficiently recomputing moments (expectation and variance) in each iteration. Regression not currently supported.
 
 [Decision tree](https://github.com/yflim/data-science-work-samples/tree/master/decision_tree)
-- Basic implementation from scratch with support for both regression and classification.
+- Basic implementation from scratch with support for both regression and classification, including cost complexity pruning.
 
 [Random forest](https://github.com/yflim/data-science-work-samples/tree/master/random_forest)
 - Basic implementation from scratch with support for both regression and classification. NOT REALLY TESTED YET.
 
+[Utils](https://github.com/yflim/data-science-work-samples/blob/master/utils/utils.py)
+- Generally useful support methods
