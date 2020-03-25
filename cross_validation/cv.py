@@ -81,7 +81,9 @@ def k_fold_cv(x, y, k, model, cv_verbose=False, shuffle=True, intercept=True, st
             x_fit = add_dummy_feature(x_fit)
         fitted = model.fit(x_fit, y.loc[include], **kwargs)
         exclude_len = len(x.loc[exclude])
-        exclude_std = ((x.loc[exclude] - x.loc[exclude].mean()) / np.sqrt(x.loc[exclude].std()**2 * (exclude_len-1)/exclude_len)).values
+        exclude_std = x.loc[exclude].values
+        if standardise:
+            exclude_std = ((x.loc[exclude] - x.loc[exclude].mean()) / np.sqrt(x.loc[exclude].std()**2 * (exclude_len-1)/exclude_len)).values
         if intercept:
             exclude_std = add_dummy_feature(exclude_std)
         predictions[exclude] = fitted.predict(exclude_std)
