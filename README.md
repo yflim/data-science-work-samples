@@ -18,5 +18,12 @@ This repository contains mostly data science-related assignment solutions, in th
 [Random forest](https://github.com/yflim/data-science-work-samples/tree/master/random_forest)
 - Basic implementation from scratch with support for both regression and classification. NOT REALLY TESTED YET.
 
+[Neural networks](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks)
+- [Implementation](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks/implementation): Implementation of simple dense network class from scratch, with demo notebook.
+- [Simple Keras usage](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks/simple_keras): Building and tuning a dense network to solve a binary classification problem.
+
+[Data](https://github.com/yflim/data-science-work-samples/tree/master/data)
+- Datasets used
+
 [Utils](https://github.com/yflim/data-science-work-samples/blob/master/utils/utils.py)
 - Generally useful support methods
