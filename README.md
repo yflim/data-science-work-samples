@@ -1,6 +1,6 @@
 This repository contains mostly data science-related assignment solutions, in the form of Python code, Jupyter notebooks, and PDFs rendered from Jupyter markdown for derivations/proofs, as well as datasets as applicable.
 
-Note that some modules implemented in this project have been edited, and code in some of the notebooks has been moved into modules, but affected/dependent notebooks have sometimes not yet been updated accordingly. In other words, code in this project may not currently be in a consistent state.
+Note that some modules implemented in this repository have been edited, and code in some of the notebooks has been moved into modules, but affected/dependent notebooks have sometimes not yet been updated accordingly. In other words, code in this repository may not currently be in a consistent state.
 
 Not included due to NDA: TransLink unsupervised clustering notebooks.
 
