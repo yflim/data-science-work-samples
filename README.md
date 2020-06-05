@@ -2,39 +2,43 @@ This repository contains mostly data science-related assignment solutions, in th
 
 Note that some modules implemented in this project have been edited, and code in some of the notebooks has been moved into modules, but affected/dependent notebooks have sometimes not yet been updated accordingly. In other words, code in this project may not currently be in a consistent state.
 
-### Table of folder contents
+## Table of folder contents
+
+### Models and algorithms
+
+[Clustering](https://github.com/yflim/data-science-work-samples/tree/master/clustering)
+- Centroid-based clustering: Notebook implementing and using k-means, k-means++, k-medians, and k-medoids/PAM from scratch.
+
+[Cross-validation](https://github.com/yflim/data-science-work-samples/tree/master/cross_validation)
+- Leave-one-out and k-fold cross-validation methods for classification, efficiently recomputing moments (expectation and variance) in each iteration. Regression not currently supported.
+
+[Decision tree](https://github.com/yflim/data-science-work-samples/tree/master/decision_tree)
+- Basic implementation from scratch with support for both regression and classification, including cost complexity pruning.
+
+[Linear models: logistic regression implementation](https://github.com/yflim/data-science-work-samples/tree/master/linear_model)
+- Logistic regression class from scratch, with L2 regularisation support.
+
+[Logistic regression](https://github.com/yflim/data-science-work-samples/tree/master/logistic_regression)
+- Parameter MLE from scratch for logistic regression using the Newton-Raphson method, plus out-of-the-box Scikit-learn solution.
+
+[Neural networks](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks)
+- [Implementation](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks/implementation): Implementation of simple dense network class from scratch, with demo notebook.
+- [Simple Keras usage](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks/simple_keras): Building and tuning a dense network to solve a binary classification problem.
 
 [OLS and GLM](https://github.com/yflim/data-science-work-samples/tree/master/OLS_and_GLM)
 - OLS solution from scratch using gradient descent, with comparison against ready-made solution from statsmodels.
 - Some related theory; also for GLM.
 
-[Logistic regression](https://github.com/yflim/data-science-work-samples/tree/master/logistic_regression)
-- Parameter MLE from scratch for logistic regression using the Newton-Raphson method, plus out-of-the-box Scikit-learn solution.
-
-[Linear models: logistic regression implementation](https://github.com/yflim/data-science-work-samples/tree/master/linear_model)
-- Logistic regression class from scratch, with L2 regularisation support.
-
-[Cross-validation](https://github.com/yflim/data-science-work-samples/tree/master/cross_validation)
-- Leave-one-out and k-fold cross-validation methods for classification, efficiently recomputing moments (expectation and variance) in each iteration. Regression not currently supported.
-
-[Regularisation](https://github.com/yflim/data-science-work-samples/tree/master/regularisation)
-- Notebook demonstrating L2 regularisation in logistic regression (implemented in [linear_model/logistic_regression.py](https://github.com/yflim/data-science-work-samples/blob/master/linear_model/logistic_regression.py)).
-
 [Optimisation](https://github.com/yflim/data-science-work-samples/tree/master/optimise)
 - Currently contains basic gradient descent implementation
-
-[Decision tree](https://github.com/yflim/data-science-work-samples/tree/master/decision_tree)
-- Basic implementation from scratch with support for both regression and classification, including cost complexity pruning.
 
 [Random forest](https://github.com/yflim/data-science-work-samples/tree/master/random_forest)
 - Basic implementation from scratch with support for both regression and classification. NOT REALLY TESTED YET.
 
-[Clustering](https://github.com/yflim/data-science-work-samples/tree/master/clustering)
-- Centroid-based clustering: Notebook implementing and using k-means, k-means++, k-medians, and k-medoids/PAM from scratch.
+[Regularisation](https://github.com/yflim/data-science-work-samples/tree/master/regularisation)
+- Notebook demonstrating L2 regularisation in logistic regression (implemented in [linear_model/logistic_regression.py](https://github.com/yflim/data-science-work-samples/blob/master/linear_model/logistic_regression.py)).
 
-[Neural networks](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks)
-- [Implementation](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks/implementation): Implementation of simple dense network class from scratch, with demo notebook.
-- [Simple Keras usage](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks/simple_keras): Building and tuning a dense network to solve a binary classification problem.
+### Other
 
 [Data](https://github.com/yflim/data-science-work-samples/tree/master/data)
 - Datasets used
