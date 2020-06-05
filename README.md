@@ -20,6 +20,9 @@ Note that some modules implemented in this project have been edited, and code in
 [Regularisation](https://github.com/yflim/data-science-work-samples/tree/master/regularisation)
 - Notebook demonstrating L2 regularisation in logistic regression (implemented in [linear_model/logistic_regression.py](https://github.com/yflim/data-science-work-samples/blob/master/linear_model/logistic_regression.py)).
 
+[Optimisation](https://github.com/yflim/data-science-work-samples/tree/master/optimise)
+- Currently contains basic gradient descent implementation
+
 [Decision tree](https://github.com/yflim/data-science-work-samples/tree/master/decision_tree)
 - Basic implementation from scratch with support for both regression and classification, including cost complexity pruning.
 
