@@ -2,6 +2,8 @@ This repository contains mostly data science-related assignment solutions, in th
 
 Note that some modules implemented in this project have been edited, and code in some of the notebooks has been moved into modules, but affected/dependent notebooks have sometimes not yet been updated accordingly. In other words, code in this project may not currently be in a consistent state.
 
+Not included due to NDA: TransLink unsupervised clustering notebooks.
+
 ## Table of folder contents
 
 ### Models and algorithms
