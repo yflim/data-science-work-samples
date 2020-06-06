@@ -1,4 +1,4 @@
-This repository contains mostly data science-related assignment solutions, in the form of Python code, Jupyter notebooks, and PDFs rendered from Jupyter markdown for derivations/proofs, as well as datasets as applicable. Nothing here was produced following (or mostly, even consulting) any relevant solutions that may be available on the web.
+This repository contains mostly data science-related assignment solutions, in the form of Python code, Jupyter notebooks, and PDFs rendered from Jupyter markdown for derivations/proofs, as well as datasets as applicable. Nothing here was produced following any relevant solutions that may be available on the web, with the current exception of a few lines of utility code.
 
 Note that some modules implemented in this repository have been edited, and code in some of the notebooks has been moved into modules, but affected/dependent notebooks have sometimes not yet been updated accordingly. In other words, code in this repository may not currently be in a consistent state.
 
