@@ -26,7 +26,7 @@ Not included due to NDA: TransLink unsupervised clustering notebooks.
 [Neural networks](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks)
 - [Implementation](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks/implementation): Implementation of simple dense network class from scratch, with demo notebook.
 - [Simple Keras usage](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks/simple_keras): Building and tuning a dense network to solve a binary classification problem.
-- [Sentiment analysis](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks/sentiment_analysis_WIP): Sentiment analysis of the Sentiment140(http://help.sentiment140.com/for-students) dataset of 1.6 million Tweets.
+- [Sentiment analysis](https://github.com/yflim/data-science-work-samples/tree/master/neural_networks/sentiment_analysis_WIP): Sentiment analysis of the [Sentiment140](http://help.sentiment140.com/for-students) dataset of 1.6 million Tweets.
 
 [OLS and GLM](https://github.com/yflim/data-science-work-samples/tree/master/OLS_and_GLM)
 - OLS solution from scratch using gradient descent, with comparison against ready-made solution from statsmodels.
